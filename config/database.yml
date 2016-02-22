@@ -23,11 +23,11 @@ default: &default
   
 
 development:
-  url: postgres://yriyctuasyeupz:UfiSAh79WlHm6mYlxdbU9fBlAm@ec2-54-227-245-197.compute-1.amazonaws.com:5432/db4ju5nbmmvkbk
-  # <<: *default
-  # database: pgb_website_development
-  # username: sunjun
-  # password: 19841120
+  # url: postgres://yriyctuasyeupz:UfiSAh79WlHm6mYlxdbU9fBlAm@ec2-54-227-245-197.compute-1.amazonaws.com:5432/db4ju5nbmmvkbk
+  <<: *default
+  database: pgb_website_development
+  username: sunjun
+  password: 19841120
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
