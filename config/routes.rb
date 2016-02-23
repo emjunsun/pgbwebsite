@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
+  get 'home/contact'
+  get 'home/about'
+  get 'home/feature'
+  get 'home/faq'
   root 'home#index'
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
   <title>PgbWebsite</title>
@@ -7,22 +8,34 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+
 </head>
-<body>
 
-<div class="container">
-  <ul class="nav nav-tabs">
 
-    <li><%= link_to "Home", root_path, class: 'btn btn-success btn-lg' %></li>
-    <li><%= link_to "About us", root_path, class: 'btn btn-primary btn-lg' %></li>
-    <li><%= link_to "Contact", root_path, class: 'btn btn-danger btn-lg' %></li>
-    <li><%= link_to "Features", root_path, class: 'btn btn-warning btn-lg' %></li>
-    <li><%= link_to "FAQs", root_path, class: 'btn btn-info btn-lg' %></li>
+  <body >
+  <div class="container">
+    <div class="collapse navbar-collapse" style="text-align: center;">
 
-  </ul>
-</div>
+
+    <ul class="nav nav-pills" style="display: inline-block;float: none;">
+      <% ac = params[:action] %>
+
+      <li><%= link_to "Home", root_path, class: ((ac =="index")?'btn btn-warning btn-lg' :'btn btn-info btn-lg') %></li>
+      <li><%= link_to "About us", home_about_path, class: ((ac =="about")?'btn btn-warning btn-lg' :'btn btn-info btn-lg') %></li>
+      <li><%= link_to "Contact", home_contact_path, class: ((ac =="contact")?'btn btn-warning btn-lg' :'btn btn-info btn-lg') %></li>
+      <li><%= link_to "Features", home_feature_path,class: ((ac =="feature")?'btn btn-warning btn-lg' :'btn btn-info btn-lg') %></li>
+      <li><%= link_to "FAQs", home_faq_path, class: ((ac =="faq")?'btn btn-warning btn-lg' :'btn btn-info btn-lg') %></li>
+
+    </ul>
+    </div>
 
 <%= yield %>
 
+
+
+  </div>
 </body>
+
 </html>
